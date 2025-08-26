@@ -1,0 +1,314 @@
+html {
+  height: 100%;
+  width: 100%;
+}* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  width: 100%;
+  overflow-x: hidden;
+  font-family: 'Roboto', sans-serif; /* Aplica Roboto a todo el cuerpo */
+}
+
+.seccion {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.seccion img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0 24px;
+  margin-top: -5px;
+  margin-bottom: 5px;
+  width: 100%;
+  max-width: 560px;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* Proporción 16:9 */
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Estilos para los textos */
+.texto-arriba,
+.texto-abajo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 20px; /* Ajusta el tamaño del texto superior */
+  text-align: center;  
+  z-index: 2; /* Asegura que el texto esté por encima de la imagen */
+}
+
+.texto-arriba {
+  top: 8%; /* Ajusta la posición del texto superior */
+  width: 100%;
+  max-width: 560px;
+  font-weight: 700;
+  font-size: 28px;
+}
+
+.texto-abajo {
+  top: calc(-15% + 320px); /* Ajusta la posición del texto inferior, 320px es la altura aproximada del video */
+  font-size: 18px;
+  width: 100%;
+  max-width: 560px;
+  font-weight: 500;
+}
+
+.enlace-destacado {
+  color: #ffffff; /* Color más oscuro para el enlace */
+  font-weight: 700; /* Fuente más pesada para resaltar */
+  text-decoration: underline; /* Subrayar el texto */
+  font-size: 19px;
+}
+
+.texto-abajo a {
+  display: inline-flex; /* Para mantener el ícono y el texto en la misma línea */
+  align-items: center; /* Asegura que el ícono esté centrado verticalmente con el texto */
+}
+
+.texto-abajo img {
+  width: 20px; /* Ajusta el tamaño del ícono */
+  height: 20px;
+  margin-right: 0px; /* Añade espacio entre el ícono y el texto */
+  position: relative; /* Permite mover el ícono con ajustes */
+  top: -1px; /* Ajusta la posición vertical del ícono, puedes cambiar el valor según lo necesites */
+}
+
+#t-a {
+  position: relative; /* Permite mover el elemento */
+  top: -4.1px; /* Ajusta el valor de 'top' para moverlo hacia arriba */
+}
+
+#t-b {
+  position: relative; /* Permite mover el elemento */
+  top: -2px; /* Ajusta el valor de 'top' para moverlo hacia arriba */
+}
+
+/* Estilos para la nueva sección */
+.nueva-seccion {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #e6e7eb; /* Color de fondo claro */
+}
+
+.titulo-principal {
+  font-size: 31px;
+  font-weight: 700;
+  color: #1e3b8b;
+  margin-bottom: 30px;
+  max-width: 100%; /* Aumenta el ancho del contenedor del texto */
+}
+
+
+/* Imagen ancha que abarca toda la pantalla */
+.imagen-ancha {
+  width: 100vw; /* Usa el 100% del ancho de la ventana */
+  height: auto;
+  display: block;
+  object-fit: cover; /* Ajusta la imagen manteniendo proporciones */
+  margin: 0;
+  padding: 0;
+  position: relative; /* Necesario para mover la imagen */
+  left: 50%; /* Mueve la imagen 50% desde la izquierda */
+  transform: translateX(-50%); /* Centra la imagen */
+}
+
+.texto-descripcion {
+  max-width: 90%; /* Aumenta el ancho del contenedor del texto */
+  margin: 20px auto 0;
+}
+
+.titulo-secundario {
+  font-size: 23px;
+  font-weight: 500;
+  color: #1e3b8b;
+  margin-bottom: 10px;
+}
+
+.parrafo {
+  font-size: 17px;
+  line-height: 1.5;
+  color: black;
+  text-align: justify; /* Alineación justificada del párrafo */
+  font-weight: 500; /* Fuente más pesada para resaltar */
+}
+
+.parrafo a {
+  display: inline-flex; /* Para mantener el ícono y el texto en la misma línea */
+  align-items: center; /* Asegura que el ícono esté centrado verticalmente con el texto */
+}
+
+.parrafo img {
+  width: 20px; /* Ajusta el tamaño del ícono */
+  height: 20px;
+  margin-right: 0px; /* Añade espacio entre el ícono y el texto */
+  position: relative; /* Permite mover el ícono con ajustes */
+  top: -1px; /* Ajusta la posición vertical del ícono, puedes cambiar el valor según lo necesites */
+}
+
+.enlace-destacado1 {
+  color: black; /* Color más oscuro para el enlace */
+  font-weight: 700; /* Fuente más pesada para resaltar */
+  text-decoration: underline; /* Subrayar el texto */
+  font-size: 19px;
+}
+
+.t-1 {
+  position: relative; /* Permite mover el elemento */
+  top: -2.5px; /* Ajusta el valor de 'top' para moverlo hacia arriba */
+}
+
+.t-3 {
+  position: relative; /* Permite mover el elemento */
+  top: -1.5px; /* Ajusta el valor de 'top' para moverlo hacia arriba */
+}
+
+.t-2 {
+  position: relative; /* Permite mover el elemento */
+  top: -2px; /* Ajusta el valor de 'top' para moverlo hacia arriba */
+}
+
+.texto-descripcion1 {
+  max-width: 90%; /* Aumenta el ancho del contenedor del texto */
+  margin: 30px auto 0;
+}
+
+.parrafo1 {
+  font-size: 23px;
+  color: #1e3b8b;
+  text-align: center;
+  font-weight: 500;
+  width: 98vw;
+  margin-left: -8.5vw;
+  margin-bottom: 20px;
+}
+
+.parrafo1 a {
+  display: inline-flex; /* Para mantener el ícono y el texto en la misma línea */
+  align-items: center; /* Asegura que el ícono esté centrado verticalmente con el texto */
+}
+
+.parrafo1 img {
+  width: 20px; /* Ajusta el tamaño del ícono */
+  height: 20px;
+  margin-right: 0px; /* Añade espacio entre el ícono y el texto */
+  position: relative; /* Permite mover el ícono con ajustes */
+  top: -1px; /* Ajusta la posición vertical del ícono, puedes cambiar el valor según lo necesites */
+}
+
+.enlace-destacado2 {
+  color: #1e3b8b; /* Color más oscuro para el enlace */
+  font-weight: 700; /* Fuente más pesada para resaltar */
+  text-decoration: underline; /* Subrayar el texto */
+  font-size: 23px;
+}
+
+.imagen-ancha1 {
+  width: 100vw; /* Usa el 100% del ancho de la ventana */
+  height: auto;
+  display: block;
+  object-fit: cover; /* Ajusta la imagen manteniendo proporciones */
+  margin-bottom: 30px;
+  padding: 0;
+  position: relative; /* Necesario para mover la imagen */
+  left: 50%; /* Mueve la imagen 50% desde la izquierda */
+  transform: translateX(-50%); /* Centra la imagen */
+}
+
+.imagen-ancha2 {
+  width: 100vw; /* Usa el 100% del ancho de la ventana */
+  height: auto;
+  display: block;
+  object-fit: cover; /* Ajusta la imagen manteniendo proporciones */
+  margin-bottom: 0px;
+  padding: 0;
+  position: relative; /* Necesario para mover la imagen */
+  left: 50%; /* Mueve la imagen 50% desde la izquierda */
+  transform: translateX(-50%); /* Centra la imagen */
+}
+
+.texto-descripcion2 {
+  max-width: 90%; /* Aumenta el ancho del contenedor del texto */
+  margin: 15px auto 0;
+}
+
+.parrafo2 {
+  font-size: 23px;
+  color: #1e3b8b;
+  text-align: center;
+  font-weight: 500;
+  width: 98vw;
+  margin-left: -8.5vw;
+  margin-bottom: 0px;
+}
+
+.parrafo2 a {
+  display: inline-flex; /* Para mantener el ícono y el texto en la misma línea */
+  align-items: center; /* Asegura que el ícono esté centrado verticalmente con el texto */
+}
+
+.parrafo2 img {
+  width: 20px; /* Ajusta el tamaño del ícono */
+  height: 20px;
+  margin-right: 0px; /* Añade espacio entre el ícono y el texto */
+  position: relative; /* Permite mover el ícono con ajustes */
+  top: -1px; /* Ajusta la posición vertical del ícono, puedes cambiar el valor según lo necesites */
+}
+
+.enlace-destacado3 {
+  color: #1e3b8b; /* Color más oscuro para el enlace */
+  font-weight: 700; /* Fuente más pesada para resaltar */
+  text-decoration: underline; /* Subrayar el texto */
+  font-size: 23px;
+}
+
+.texto-final {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ffffff;
+  font-size: 20px; /* Ajusta el tamaño del texto superior */
+  text-align: center;  
+  z-index: 3; /* Asegura que el texto esté por encima de la imagen */
+   top: 90%; /* Ajusta la posición del texto superior */
+  width: 100%;
+  max-width: 560px;
+  font-weight: 700;
+  font-size: 14px;
+
+  .s {
+  color: #ffffff; /* Color más oscuro para el enlace */
+  font-weight: 400; /* Fuente más pesada para resaltar */
+  }
