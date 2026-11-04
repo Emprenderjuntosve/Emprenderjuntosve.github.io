@@ -74,16 +74,22 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  function posicionar(conAnimacion) {
-    pista.style.transition = conAnimacion
-      ? "transform 0.5s ease"
-      : "none";
 
-    pista.style.transform =
-      "translateX(-" + (actual * 100) + "%)";
+function posicionar(conAnimacion) {
+  pista.style.transition = conAnimacion
+    ? "transform 0.5s ease"
+    : "none";
 
-    ajustarAltura();
+  pista.style.transform =
+    "translate3d(-" + (actual * 100) + "%, 0, 0)";
+
+  if (!conAnimacion) {
+    void pista.offsetWidth;
   }
+
+  ajustarAltura();
+}
+
 
   function mover(direccion) {
     if (animando) return;
@@ -101,20 +107,25 @@ document.addEventListener("DOMContentLoaded", function () {
     mover(-1);
   }
 
-  pista.addEventListener("transitionend", function (evento) {
-    if (evento.target !== pista ||
-        evento.propertyName !== "transform") return;
+  
+pista.addEventListener("transitionend", function (evento) {
+  if (
+    evento.target !== pista ||
+    evento.propertyName !== "transform"
+  ) return;
 
-    if (actual === imagenes.length - 1) {
-      actual = 1;
-      posicionar(false);
-    } else if (actual === 0) {
-      actual = imagenes.length - 2;
-      posicionar(false);
-    }
+  if (actual === imagenes.length - 1) {
+    actual = 1;
+    posicionar(false);
 
-    animando = false;
-  });
+  } else if (actual === 0) {
+    actual = imagenes.length - 2;
+    posicionar(false);
+  }
+
+  animando = false;
+});
+
 
   function detenerTemporizador() {
     if (temporizador !== null) {
