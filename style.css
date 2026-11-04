@@ -93,10 +93,14 @@ body, html {
   font-size: 19px;
 }
 
+
 .texto-abajo a {
-  display: inline-flex; /* Para mantener el ícono y el texto en la misma línea */
-  align-items: center; /* Asegura que el ícono esté centrado verticalmente con el texto */
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  top: 24px;
 }
+
 
 .texto-abajo img {
   width: 20px; /* Ajusta el tamaño del ícono */
@@ -202,7 +206,7 @@ body, html {
 
 .texto-descripcion1 {
   max-width: 90%; /* Aumenta el ancho del contenedor del texto */
-  margin: 30px auto 0;
+  margin: 0px auto 0;
 }
 
 .parrafo1 {
@@ -312,11 +316,22 @@ body, html {
   color: #ffffff; /* Color más oscuro para el enlace */
   font-weight: 400; /* Fuente más pesada para resaltar */
   }
-  
-  
+}
+
+
+
+
+
+
+
+
 /* EFECTO DE ONDAS EXPANSIVAS */
 
 .efecto-ondas {
+  position: relative;
+  display: inline-block;
+  width: max-content;
+  max-width: calc(100% - 24px);
   isolation: isolate;
 }
 
@@ -324,25 +339,26 @@ body, html {
 .efecto-ondas::after {
   content: "";
   position: absolute;
-  top: 50%;
+  top: calc(50% + 24px);
   left: 50%;
-  width: 95%;
-  height: 85%;
+  width: calc(100% + 20px);
+  height: calc(100% + 20px);
   border: 2px solid rgba(255, 255, 255, 0.85);
   border-radius: 18px;
   pointer-events: none;
   z-index: -1;
   box-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
-  animation: ondasExpandir 2.5s ease-out infinite;
+  animation: ondasExpandir 2.5s linear infinite;
 }
 
 .efecto-ondas::after {
   animation-delay: 1.25s;
 }
 
+
 @keyframes ondasExpandir {
   0% {
-    transform: translate(-50%, -50%) scale(0.85);
+    transform: translate(-50%, -50%) scale(1, 1);
     opacity: 0;
   }
 
@@ -350,16 +366,69 @@ body, html {
     opacity: 0.9;
   }
 
+  50% {
+    opacity: 0.7;
+  }
+
+  80% {
+    opacity: 0.3;
+  }
+
   100% {
-    transform: translate(-50%, -50%) scale(1.25);
+    transform: translate(-50%, -50%) scale(1.10, 1.25);
     opacity: 0;
   }
 }
 
+
+
+/* IMAGEN TEMPORAL DEL VIDEO */
+
+.video-wrapper .imagen-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+
+/* CARRUSEL DE TESTIMONIOS */
+
+.carrusel-testimonios {
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.carrusel-ventana {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  transition: height 0.45s ease;
+  touch-action: pan-y;
+}
+
+.carrusel-pista {
+  display: flex;
+  align-items: flex-start;
+  transition: transform 0.5s ease;
+  will-change: transform;
+}
+
+.carrusel-pista > img {
+  flex: 0 0 100%;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .efecto-ondas::before,
-  .efecto-ondas::after {
-    animation: none;
-    opacity: 0;
+  .carrusel-ventana,
+  .carrusel-pista {
+    transition: none;
   }
 }
