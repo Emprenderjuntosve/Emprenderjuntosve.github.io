@@ -312,3 +312,54 @@ body, html {
   color: #ffffff; /* Color más oscuro para el enlace */
   font-weight: 400; /* Fuente más pesada para resaltar */
   }
+  
+  
+/* EFECTO DE ONDAS EXPANSIVAS */
+
+.efecto-ondas {
+  isolation: isolate;
+}
+
+.efecto-ondas::before,
+.efecto-ondas::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 95%;
+  height: 85%;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  border-radius: 18px;
+  pointer-events: none;
+  z-index: -1;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
+  animation: ondasExpandir 2.5s ease-out infinite;
+}
+
+.efecto-ondas::after {
+  animation-delay: 1.25s;
+}
+
+@keyframes ondasExpandir {
+  0% {
+    transform: translate(-50%, -50%) scale(0.85);
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 0.9;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1.25);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .efecto-ondas::before,
+  .efecto-ondas::after {
+    animation: none;
+    opacity: 0;
+  }
+}
