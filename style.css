@@ -70,13 +70,19 @@ body, html {
   z-index: 2; /* Asegura que el texto esté por encima de la imagen */
 }
 
+
 .texto-arriba {
-  top: 8%; /* Ajusta la posición del texto superior */
+  top: 4%;
   width: 100%;
   max-width: 560px;
+  font-family: 'Roboto', sans-serif;
   font-weight: 700;
-  font-size: 28px;
+  font-size: 19px;
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
 }
+
 
 .texto-abajo {
   top: calc(-15% + 320px); /* Ajusta la posición del texto inferior, 320px es la altura aproximada del video */
@@ -431,4 +437,29 @@ body, html {
   .carrusel-pista {
     transition: none;
   }
+}
+
+
+
+
+/* SEGUNDA LINEA DEL TITULO */
+
+.linea-con-flecha {
+  position: relative;
+  display: inline-block;
+}
+
+/* FLECHA INDEPENDIENTE DEL TEXTO */
+
+.texto-arriba .linea-con-flecha img.flecha-texto-arriba {
+  position: absolute;
+  display: block;
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+  max-width: none;
+
+  left: 100%;
+  top: 50%;
+  transform: translate(5px, -40%);
 }
