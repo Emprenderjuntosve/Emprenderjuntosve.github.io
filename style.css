@@ -387,20 +387,6 @@ body, html {
 }
 
 
-
-/* IMAGEN TEMPORAL DEL VIDEO */
-
-.video-wrapper .imagen-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-}
-
-
 /* CARRUSEL DE TESTIMONIOS */
 
 .carrusel-testimonios {
