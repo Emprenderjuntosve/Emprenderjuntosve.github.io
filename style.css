@@ -449,3 +449,18 @@ body, html {
   top: 50%;
   transform: translate(5px, -40%);
 }
+
+
+/* ÁREA CLICABLE DEL BOTÓN */
+
+.texto-abajo .efecto-ondas a.enlace-transparente-boton {
+  position: absolute;
+  display: block;
+  top: 14px;
+  left: -10px;
+  width: calc(100% + 20px);
+  height: calc(100% + 20px);
+  background: transparent;
+  z-index: 5;
+  cursor: pointer;
+}
